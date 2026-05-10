@@ -1,0 +1,16 @@
+version: '3'
+services:
+  openvas:
+    image: immauss/openvas
+    container_name: openvas
+    ports:
+      - "9392:9392"
+    environment:
+      - USERNAME=admin
+      - PASSWORD=admin
+    volumes:
+      - openvas_data:/data
+    restart: unless-stopped
+
+volumes:
+  openvas_data:
